@@ -1,0 +1,462 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+body { background: #f6f6f4; }
+
+.nl-wrap {
+  max-width: 860px;
+  margin: 32px auto;
+  font-family: 'Inter', Arial, sans-serif;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+/* ─── HEADER ── */
+.nl-header {
+  padding: 36px 48px 22px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+.nl-brand {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 11px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: #888;
+  margin: 0 0 6px;
+}
+.nl-logo {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  margin: 0 0 12px;
+}
+.nl-logo::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 2px;
+  background: #F0997B;
+  margin: 10px auto 0;
+}
+.nl-pill-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.nl-pill {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 4px 14px;
+}
+.nl-pill-ep  { background: #1a1a1a; color: #fff; }
+.nl-pill-tag { background: #FAECE7; color: #3B6D11; }
+
+/* ─── TITRE ── */
+.nl-titre-block { padding: 28px 48px 0; }
+.nl-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+  margin: 0 0 8px;
+}
+
+/* ─── TEXTE ── */
+.nl-text {
+  padding: 22px 48px 0;
+  font-size: 16px;
+  line-height: 1.85;
+  color: #2a2a2a;
+}
+.nl-text p { margin: 0 0 1.2em 0; }
+.nl-text .nl-title,
+.nl-text .nl-meta,
+.nl-text h2:first-child,
+.nl-text p.nl-meta:first-child { display: none; }
+.nl-text p[style*="border-left"] {
+  border-left: 3px solid #F0997B !important;
+  background: #fafafa;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: #555;
+}
+
+/* ─── LIRE PLUS ── */
+.nl-text-preview {
+  position: relative;
+  max-height: 320px;
+  overflow: hidden;
+}
+.nl-text-preview::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 100px;
+  background: linear-gradient(transparent, #ffffff);
+  pointer-events: none;
+}
+.nl-lire-plus {
+  display: block;
+  margin: 16px auto 28px;
+  background: none;
+  border: 1.5px solid #1a1a1a;
+  color: #1a1a1a;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 11px 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.nl-lire-plus:hover { background: #1a1a1a; color: #ffffff; }
+
+/* ─── HERO IMAGE ── */
+.nl-hero {
+  margin: 28px 48px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.nl-hero-label {
+  position: absolute;
+  top: 14px; left: 14px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 4px 12px;
+  z-index: 1;
+}
+.nl-hero img { width: 100%; display: block; }
+
+/* ─── CARTE ÉDUCATIVE ── */
+.nl-card {
+  margin: 0 48px 36px;
+  padding: 24px 24px 24px 28px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fff3ee, #ffe9e2);
+  border: 1px solid rgba(240,153,123,0.3);
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.nl-card::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0;
+  width: 4px; height: 100%;
+  background: #F0997B;
+  border-radius: 14px 0 0 14px;
+}
+.nl-card-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #993C1D;
+  margin-bottom: 6px;
+}
+.nl-card-concept {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #4A1B0C;
+  margin-bottom: 10px;
+}
+.nl-card-explain {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #712B13;
+  margin-bottom: 14px;
+}
+.nl-card-try-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #993C1D;
+  margin-bottom: 5px;
+}
+.nl-card-try-text {
+  font-size: 13px;
+  color: #4A1B0C;
+  line-height: 1.55;
+}
+
+/* ─── FOOTER ── */
+.nl-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 48px 24px;
+  border-top: 1px solid #eee;
+  font-size: 11px;
+  color: #aaa;
+}
+.nl-footer-brand {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #bbb;
+}
+.nl-footer a { color: #aaa; text-decoration: none; margin-left: 16px; }
+.nl-footer a:hover { color: #000; }
+
+</style>
+<div class="nl-wrap">
+
+  <div class="nl-header">
+    <p class="nl-brand">La newsletter</p>
+    <h1 class="nl-logo">Reboot Général</h1>
+    <div class="nl-pill-row">
+      <span class="nl-pill nl-pill-ep">Épisode 01</span>
+      <span class="nl-pill nl-pill-tag">IA du quotidien</span>
+    </div>
+  </div>
+
+  <div class="nl-titre-block">
+    <h2 class="nl-title">Tu vas adorer ce que tu n'as pas cherché</h2>
+  </div>
+
+  <div class="nl-text">
+    <div class="nl-text-preview"><div class="nl-wrap">
+
+<div class="nl-hero">
+<!-- ILLUSTRATION -->
+</div>
+
+<div class="nl-body">
+
+
+
+
+<div class="nl-cols">
+
+<div class="nl-text">
+<p>Léa est affalée sur son canapé, télécommande en main, dans la lumière bleue de l'écran.</p>
+
+<p>"Bon, qu'est-ce que je regarde ce soir ?"</p>
+
+<p>Elle le dit à voix haute, comme si quelqu'un allait répondre. Et étrangement, quelque chose répond. Pas avec des mots. Avec des vignettes.</p>
+
+<p>Première ligne de Netflix : "Spécialement sélectionné pour Léa".</p>
+
+<p>Attendez, quoi ? Elle ne se souvient pas avoir donné son prénom en créant son compte.</p>
+
+<p>Scroll. "Parce que vous avez regardé The Good Place". Effectivement, elle a dévoré les quatre saisons l'année dernière. Mais comment ils savent ça, au juste ?</p>
+
+<p>Scroll. "Documentaires qui pourraient vous intéresser". Elle ne clique jamais sur les documentaires. Enfin, presque jamais. Okay, elle a craqué sur celui des escroqueries crypto la semaine dernière. Mais c'était de la curiosité malsaine.</p>
+
+<p>Scroll. Une série coréenne. Elle déteste les sous-titres. Non, attendez. Elle a adoré Squid Game. Et Parasite au ciné l'an dernier. Et ce truc bizarre avec les monstres qu'elle a fini à 3h du matin en septembre.</p>
+
+<p>Bon sang, ils connaissent ses contradictions mieux qu'elle.</p>
+
+<p>Elle commence à compter. Quarante minutes qu'elle scrolle. Quarante minutes à hésiter, cliquer, revenir en arrière, re-hésiter. C'est devenu un sport olympique, le browsing Netflix.</p>
+
+<p>Chaque vignette semble placée là exprès. Comme si quelqu'un l'observait depuis des années, prenait des notes, analysait ses petits plaisirs coupables. "Tiens, elle regarde toujours des comédies romantiques quand il pleut. Noté."</p>
+
+<p>"Nouveauté du jour : The Midnight Library".</p>
+
+<p>Jamais entendu parler. La synopsis parle d'une femme de 35 ans qui repense sa vie.</p>
+
+<p>Léa a 30 ans et traverse actuellement sa phase "et si j'avais fait Sciences Po au lieu de RH ?". Coïncidence ? Elle commence à en douter.</p>
+
+<p>Elle clique.</p>
+
+<p>L'héroïne porte des lunettes. Comme Léa. Elle travaille dans les RH. Comme Léa. Elle habite un appart trop petit et se demande si c'est ça, la vraie vie d'adulte. Elle boit du thé Earl Grey en regardant par la fenêtre avec un air mélancolique.</p>
+
+<p>Exactement comme Léa. Sauf qu'elle n'a jamais dit à Netflix qu'elle buvait du Earl Grey.</p>
+
+<p>Premier épisode. Puis deuxième. L'héroïne a même les mêmes lunettes qu'elle. Des rondes, monture écaille. Achetées chez Afflelou. Bon, là c'est peut-être de la parano.</p>
+
+<p>Ou pas.</p>
+
+<p>Entre deux épisodes, elle pause et réfléchit. Comment ils savent qu'elle préfère les séries avec des héroïnes brunes ? Qu'elle craque pour les intrigues psychologiques mais pas trop glauques ? Qu'elle a abandonné Stranger Things après la saison 2 parce que trop angoissant ?</p>
+
+<p>Elle n'a pourtant jamais rempli de questionnaire "Dites-nous en plus sur vos névroses".</p>
+
+<p>23h47. Générique de fin du troisième épisode. Elle est scotchée. Hypnotisée. Cette série lui parle comme si elle avait été écrite pour elle. Spoiler : c'est probablement le cas.</p>
+
+<p>Elle attrape son téléphone, envoie un vocal à Margot :</p>
+
+<p>"J'ai trouvé une série de ouf, j'ai l'impression que c'était fait pour moi."</p>
+
+<p>Petit silence. Elle regarde l'écran. "Vous aimerez peut-être aussi" propose déjà une nouvelle ligne. Parfaitement calibrée. Parfaitement elle.</p>
+
+<p>"En fait... c'était fait pour moi."</p>
+
+<p>Elle repose son téléphone. L'algorithme a déjà noté qu'elle a regardé trois épisodes d'affilée. Qu'elle n'a pas fait de pause pipi. Qu'elle n'a pas checkté Instagram pendant le visionnage. Bingo.</p>
+
+<p>Elle sourit. Puis fronce les sourcils.</p>
+
+<p>Comment ils ont su qu'elle adorait les fins ouvertes ? Qu'elle détestait les laugh tracks ? Qu'elle préférait les séries de 40 minutes max parce que sa capacité d'attention ressemble à celle d'un poisson rouge ?</p>
+
+<p>Elle n'a jamais rien dit de tout ça à personne.</p>
+
+<p>Sauf à Netflix, apparemment.</p>
+
+<p style="border-left: 3px solid #ccc; padding-left: 14px; color: #555; font-style: italic;">Quelque part dans un serveur, un algorithme note : "Profil Léa Martin, 30 ans, RH : engagement optimal atteint. Préparer recommandations similaires pour demain 20h32, heure habituelle de connexion weekend."</p>
+</div>
+
+<!-- CARTE_EDUCATIVE -->
+
+</div>
+
+<div class="nl-footer">
+<span>Reboot Général</span>
+<span>IA du quotidien</span>
+</div>
+
+</div>
+
+</div></div>
+    <div class="nl-text-full" style="display:none"><div class="nl-wrap">
+
+<div class="nl-hero">
+<!-- ILLUSTRATION -->
+</div>
+
+<div class="nl-body">
+
+
+
+
+<div class="nl-cols">
+
+<div class="nl-text">
+<p>Léa est affalée sur son canapé, télécommande en main, dans la lumière bleue de l'écran.</p>
+
+<p>"Bon, qu'est-ce que je regarde ce soir ?"</p>
+
+<p>Elle le dit à voix haute, comme si quelqu'un allait répondre. Et étrangement, quelque chose répond. Pas avec des mots. Avec des vignettes.</p>
+
+<p>Première ligne de Netflix : "Spécialement sélectionné pour Léa".</p>
+
+<p>Attendez, quoi ? Elle ne se souvient pas avoir donné son prénom en créant son compte.</p>
+
+<p>Scroll. "Parce que vous avez regardé The Good Place". Effectivement, elle a dévoré les quatre saisons l'année dernière. Mais comment ils savent ça, au juste ?</p>
+
+<p>Scroll. "Documentaires qui pourraient vous intéresser". Elle ne clique jamais sur les documentaires. Enfin, presque jamais. Okay, elle a craqué sur celui des escroqueries crypto la semaine dernière. Mais c'était de la curiosité malsaine.</p>
+
+<p>Scroll. Une série coréenne. Elle déteste les sous-titres. Non, attendez. Elle a adoré Squid Game. Et Parasite au ciné l'an dernier. Et ce truc bizarre avec les monstres qu'elle a fini à 3h du matin en septembre.</p>
+
+<p>Bon sang, ils connaissent ses contradictions mieux qu'elle.</p>
+
+<p>Elle commence à compter. Quarante minutes qu'elle scrolle. Quarante minutes à hésiter, cliquer, revenir en arrière, re-hésiter. C'est devenu un sport olympique, le browsing Netflix.</p>
+
+<p>Chaque vignette semble placée là exprès. Comme si quelqu'un l'observait depuis des années, prenait des notes, analysait ses petits plaisirs coupables. "Tiens, elle regarde toujours des comédies romantiques quand il pleut. Noté."</p>
+
+<p>"Nouveauté du jour : The Midnight Library".</p>
+
+<p>Jamais entendu parler. La synopsis parle d'une femme de 35 ans qui repense sa vie.</p>
+
+<p>Léa a 30 ans et traverse actuellement sa phase "et si j'avais fait Sciences Po au lieu de RH ?". Coïncidence ? Elle commence à en douter.</p>
+
+<p>Elle clique.</p>
+
+<p>L'héroïne porte des lunettes. Comme Léa. Elle travaille dans les RH. Comme Léa. Elle habite un appart trop petit et se demande si c'est ça, la vraie vie d'adulte. Elle boit du thé Earl Grey en regardant par la fenêtre avec un air mélancolique.</p>
+
+<p>Exactement comme Léa. Sauf qu'elle n'a jamais dit à Netflix qu'elle buvait du Earl Grey.</p>
+
+<p>Premier épisode. Puis deuxième. L'héroïne a même les mêmes lunettes qu'elle. Des rondes, monture écaille. Achetées chez Afflelou. Bon, là c'est peut-être de la parano.</p>
+
+<p>Ou pas.</p>
+
+<p>Entre deux épisodes, elle pause et réfléchit. Comment ils savent qu'elle préfère les séries avec des héroïnes brunes ? Qu'elle craque pour les intrigues psychologiques mais pas trop glauques ? Qu'elle a abandonné Stranger Things après la saison 2 parce que trop angoissant ?</p>
+
+<p>Elle n'a pourtant jamais rempli de questionnaire "Dites-nous en plus sur vos névroses".</p>
+
+<p>23h47. Générique de fin du troisième épisode. Elle est scotchée. Hypnotisée. Cette série lui parle comme si elle avait été écrite pour elle. Spoiler : c'est probablement le cas.</p>
+
+<p>Elle attrape son téléphone, envoie un vocal à Margot :</p>
+
+<p>"J'ai trouvé une série de ouf, j'ai l'impression que c'était fait pour moi."</p>
+
+<p>Petit silence. Elle regarde l'écran. "Vous aimerez peut-être aussi" propose déjà une nouvelle ligne. Parfaitement calibrée. Parfaitement elle.</p>
+
+<p>"En fait... c'était fait pour moi."</p>
+
+<p>Elle repose son téléphone. L'algorithme a déjà noté qu'elle a regardé trois épisodes d'affilée. Qu'elle n'a pas fait de pause pipi. Qu'elle n'a pas checkté Instagram pendant le visionnage. Bingo.</p>
+
+<p>Elle sourit. Puis fronce les sourcils.</p>
+
+<p>Comment ils ont su qu'elle adorait les fins ouvertes ? Qu'elle détestait les laugh tracks ? Qu'elle préférait les séries de 40 minutes max parce que sa capacité d'attention ressemble à celle d'un poisson rouge ?</p>
+
+<p>Elle n'a jamais rien dit de tout ça à personne.</p>
+
+<p>Sauf à Netflix, apparemment.</p>
+
+<p style="border-left: 3px solid #ccc; padding-left: 14px; color: #555; font-style: italic;">Quelque part dans un serveur, un algorithme note : "Profil Léa Martin, 30 ans, RH : engagement optimal atteint. Préparer recommandations similaires pour demain 20h32, heure habituelle de connexion weekend."</p>
+</div>
+
+<!-- CARTE_EDUCATIVE -->
+
+</div>
+
+<div class="nl-footer">
+<span>Reboot Général</span>
+<span>IA du quotidien</span>
+</div>
+
+</div>
+
+</div></div>
+    <button class="nl-lire-plus" id="nl-btn-lire" onclick="
+      var preview = this.previousElementSibling.previousElementSibling;
+      var full = this.previousElementSibling;
+      if (full.style.display === 'none') {
+        full.style.display = 'block';
+        preview.style.display = 'none';
+        this.textContent = 'Refermer ↑';
+      } else {
+        full.style.display = 'none';
+        preview.style.display = 'block';
+        this.textContent = 'Lire la suite →';
+      }
+    ">Lire la suite →</button>
+  </div>
+
+  
+<div class="nl-hero">
+  <span class="nl-hero-label">Image du jour</span>
+  <img src="https://baserow-backend-production20240528124524339000000001.s3.amazonaws.com/user_files/Ifrgc4oYLUfBmCYza1SIcBrnpJPX5vsZ_dea13cc2287997ed5e5e6fa4f276643f35abb55c0d620113d9ae821f7a317f20.jpg" alt="Illustration épisode 1 — Tu vas adorer ce que tu n'as pas cherché" />
+</div>
+
+  <div class="nl-card">
+    <div class="nl-card">
+  <div class="nl-card-label">Le concept</div>
+  <div class="nl-card-concept">Algorithme de recommandation</div>
+  <div class="nl-card-explain">Un système qui analyse tes goûts passés pour prédire ce que tu vas adorer. Il utilise le <strong>machine learning</strong> (apprentissage automatique) pour identifier des motifs dans tes préférences et le <strong>filtrage collaboratif</strong> (comparaison avec des utilisateurs similaires) pour affiner ses suggestions. C'est comme un ami très observateur qui connaît parfaitement tes goûts, mais en version robot ultra-performant.</div>
+  <div class="nl-card-try-label">Essaie ça →</div>
+  <div class="nl-card-try-text">Va sur Netflix et regarde attentivement ta page d'accueil. Puis mate un épisode de télé-réalité (oui, même si tu détestes ça). Reviens le lendemain : tu vas voir ton algorithme complètement perdu, te proposer des trucs chelous. Tu viens de hacker tes propres recommandations !</div>
+</div>
+  </div>
+
+  <div class="nl-footer">
+    <span class="nl-footer-brand">Reboot Général</span>
+    <div>
+      <a href="#">Se désabonner</a>
+      <a href="#">Voir en ligne</a>
+    </div>
+  </div>
+
+</div>
